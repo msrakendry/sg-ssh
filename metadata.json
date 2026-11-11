@@ -1,0 +1,6 @@
+{
+  "name": "Sudan Sustainability Hub (SSH)",
+  "description": "Professional NGO website, management dashboard, and Community & Engagement Management (CEM) platform for Sudan Sustainability Hub.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

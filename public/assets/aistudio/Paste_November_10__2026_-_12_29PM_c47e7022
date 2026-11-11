@@ -1,0 +1,1673 @@
+
+# MASTER PROMPT — SSH PLATFORM
+## PHASE 4: LARAVEL FOUNDATION, AUTHENTICATION, RBAC & CORE PLATFORM
+
+### PROJECT
+
+You are now acting as a **Senior Laravel Architect, PHP Engineer, Database Engineer, Cybersecurity Engineer, NGO Information Management Specialist, and Enterprise UX Engineer**.
+
+You are developing the official digital platform for:
+
+**Sudan Sustainability Hub (SSH)**  
+Website: `sudansustainabilityhub.org`  
+Email: `sudansustainabilityhub@gmail.com`  
+Phone: `+256795133033`
+
+SSH is a refugee-led humanitarian and sustainable development organization working with displaced and vulnerable communities, particularly Sudanese communities in Uganda and future Sudan recovery contexts.
+
+The platform must be designed as a **real-life professional NGO management system**, comparable in quality, structure, security, usability, and maintainability to systems used by established humanitarian and international development organizations.
+
+This is **not a student project, demonstration application, toy CRUD system, or generic Laravel template**.
+
+---
+
+# 1. OBJECTIVE OF THIS PHASE
+
+Implement the **Laravel foundation and core platform** based on the previously approved:
+
+- System architecture
+- Database architecture
+- RBAC architecture
+- UI/UX design system
+- Hostinger deployment architecture
+
+Do NOT immediately build every NGO module.
+
+First create a strong, secure, reusable foundation that all future SSH modules will use.
+
+The foundation must include:
+
+1. Laravel application structure
+2. Database configuration
+3. Authentication
+4. User management
+5. Role-Based Access Control
+6. Permissions
+7. User profiles
+8. Organization structure
+9. Audit logging
+10. Notifications foundation
+11. English/Arabic language system
+12. RTL support
+13. Admin dashboard shell
+14. Public website shell
+15. File/document security foundation
+16. Activity tracking
+17. Approval workflow foundation
+18. Settings
+19. Security controls
+20. Error handling
+21. Validation framework
+22. Testing framework
+23. Hostinger deployment readiness
+
+---
+
+# 2. REQUIRED TECHNOLOGY STACK
+
+Use:
+
+### Backend
+
+- PHP 8.2+
+- Laravel 12+ or the latest stable Laravel version supported by the deployment environment
+- MySQL/MariaDB
+- Laravel Eloquent ORM
+- Laravel validation
+- Laravel policies/gates
+- Laravel notifications
+- Laravel queues using database driver where required
+- Laravel scheduler
+
+### Frontend
+
+- Blade
+- Tailwind CSS
+- Alpine.js
+- Chart.js where charts are required
+- Leaflet.js for GIS/map functionality
+- Vite for asset compilation only
+
+### Infrastructure
+
+The system must work on normal **Hostinger shared hosting**.
+
+Do NOT make the system dependent on:
+
+- Docker
+- Kubernetes
+- Redis
+- RabbitMQ
+- Elasticsearch
+- Supervisor
+- Python backend
+- Node.js permanent server
+- WebSocket server
+- VPS-only infrastructure
+
+If an advanced service is useful, design the system so it can be added later without redesigning the core application.
+
+---
+
+# 3. LARAVEL PROJECT FOUNDATION
+
+Create a professional Laravel project structure.
+
+Use a clean architecture such as:
+
+```text
+app/
+├── Console/
+├── Exceptions/
+├── Http/
+│   ├── Controllers/
+│   ├── Middleware/
+│   ├── Requests/
+│   └── Resources/
+├── Models/
+├── Notifications/
+├── Policies/
+├── Providers/
+└── Services/
+
+bootstrap/
+config/
+database/
+├── factories/
+├── migrations/
+└── seeders/
+
+lang/
+├── en/
+└── ar/
+
+public/
+resources/
+├── css/
+├── js/
+└── views/
+
+routes/
+├── web.php
+├── api.php
+└── console.php
+
+storage/
+tests/
+```
+
+Organize the application so that future modules can be added without creating an unmaintainable controller structure.
+
+---
+
+# 4. ENVIRONMENT CONFIGURATION
+
+Create a proper `.env` architecture.
+
+Never hard-code:
+
+- passwords
+- database credentials
+- SMTP credentials
+- API keys
+- encryption keys
+- payment credentials
+- donor credentials
+- cloud credentials
+
+Use:
+
+```text
+APP_NAME="Sudan Sustainability Hub"
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://sudansustainabilityhub.org
+```
+
+Create appropriate configuration for:
+
+- database
+- mail
+- filesystem
+- queue
+- cache
+- session
+- localization
+- logging
+
+Provide a secure `.env.example`.
+
+Never commit `.env`.
+
+---
+
+# 5. AUTHENTICATION SYSTEM
+
+Implement professional authentication.
+
+Required features:
+
+- Login
+- Logout
+- Forgot password
+- Password reset
+- Remember me
+- Session protection
+- Email verification
+- Account activation/deactivation
+- Password change
+- Profile update
+- Secure authentication validation
+
+Implement protection against:
+
+- brute-force login attempts
+- CSRF
+- session fixation
+- unauthorized access
+- insecure direct object access
+- privilege escalation
+
+Use Laravel's built-in security mechanisms wherever possible.
+
+---
+
+# 6. MULTI-ROLE RBAC SYSTEM
+
+Implement a professional Role-Based Access Control system.
+
+Initial roles:
+
+### Level 1 — Executive / Governance
+
+1. Super Administrator
+2. Executive Director
+
+### Level 2 — Management
+
+3. Program Director
+4. Program Manager
+5. Finance Officer
+6. HR/Admin Officer
+7. M&E Officer
+8. Donor & Partnership Officer
+9. Communications Officer
+
+### Level 3 — Operations
+
+10. Project Officer
+11. CEM Officer
+12. Volunteer Coordinator
+13. Field Officer
+
+### Level 4 — Oversight
+
+14. Auditor
+15. Viewer
+
+---
+
+# 7. PERMISSION ARCHITECTURE
+
+Do NOT only check roles directly in controllers.
+
+Create granular permissions.
+
+Examples:
+
+```text
+users.view
+users.create
+users.update
+users.delete
+
+programs.view
+programs.create
+programs.update
+programs.delete
+programs.approve
+
+projects.view
+projects.create
+projects.update
+projects.delete
+projects.approve
+
+beneficiaries.view
+beneficiaries.create
+beneficiaries.update
+
+donors.view
+donors.create
+donors.update
+
+donations.view
+donations.create
+donations.approve
+
+reports.view
+reports.create
+reports.approve
+
+documents.view
+documents.upload
+documents.download
+documents.delete
+
+settings.view
+settings.update
+
+audit.view
+```
+
+Build permissions so that they can be expanded later.
+
+---
+
+# 8. PERMISSION SECURITY
+
+Every sensitive operation must verify authorization.
+
+Use:
+
+- Gates
+- Policies
+- Middleware
+- Controller authorization
+- Form request authorization
+
+Never rely only on hiding buttons in the interface.
+
+Example:
+
+A user without:
+
+```text
+users.delete
+```
+
+must receive an authorization failure even if they manually enter the URL.
+
+---
+
+# 9. USER MANAGEMENT
+
+Create the initial User Management module.
+
+Administrator interface:
+
+### Users
+
+Columns:
+
+- Name
+- Username/email
+- Role
+- Department
+- Status
+- Last Login
+- Created Date
+- Actions
+
+Actions:
+
+- View
+- Edit
+- Activate
+- Deactivate
+- Reset Password
+- Assign Role
+- Assign Permissions
+- View Activity
+
+Use confirmation dialogs for destructive actions.
+
+---
+
+# 10. USER PROFILE
+
+Create a professional profile page.
+
+Include:
+
+- Profile photo
+- Full name
+- Job title
+- Department
+- Email
+- Phone
+- Country
+- Preferred language
+- Role
+- Account status
+- Last login
+- Security settings
+
+Security section:
+
+- Change password
+- Active sessions
+- Login history
+- Account security
+
+---
+
+# 11. ORGANIZATIONAL STRUCTURE
+
+Create database support for SSH organizational structure.
+
+Include:
+
+```text
+Organization
+ ├── Governance / Board
+ ├── Executive Leadership
+ ├── Programs
+ ├── Finance
+ ├── Administration & HR
+ ├── Monitoring & Evaluation
+ ├── Communications
+ ├── Community Engagement
+ └── Field Operations
+```
+
+Do not assume that organizational departments will remain fixed forever.
+
+Make them configurable.
+
+---
+
+# 12. AUDIT LOG SYSTEM
+
+This is mandatory.
+
+Every sensitive system activity should be recorded.
+
+Record:
+
+- User
+- Action
+- Module
+- Record type
+- Record ID
+- IP address
+- User agent
+- Timestamp
+- Previous value where appropriate
+- New value where appropriate
+- Description
+
+Examples:
+
+```text
+User created
+User deleted
+Role changed
+Permission changed
+Document uploaded
+Document downloaded
+Project approved
+Donation recorded
+Financial record modified
+Beneficiary record updated
+Report approved
+Settings changed
+```
+
+Audit logs must be:
+
+- searchable
+- filterable
+- exportable by authorized users
+- protected from ordinary users
+- retained according to SSH policy
+
+Auditors should have read-only access.
+
+---
+
+# 13. DATABASE MIGRATIONS
+
+Create production-quality migrations.
+
+At minimum implement:
+
+```text
+users
+roles
+permissions
+role_user
+permission_role
+departments
+user_profiles
+sessions
+password_reset_tokens
+audit_logs
+notifications
+settings
+languages
+documents
+document_categories
+approval_workflows
+approval_steps
+activity_logs
+```
+
+Use:
+
+- primary keys
+- foreign keys
+- indexes
+- unique constraints
+- timestamps
+- soft deletes where appropriate
+
+Do not create unnecessary database duplication.
+
+---
+
+# 14. DATABASE DESIGN PRINCIPLES
+
+Use normalized relational design.
+
+For example:
+
+Do NOT store:
+
+```text
+role = "Finance Officer"
+```
+
+directly as the only authorization mechanism.
+
+Instead use proper role relationships.
+
+Likewise, avoid storing large JSON structures where relational tables are more appropriate.
+
+Use JSON only where flexibility is genuinely required.
+
+---
+
+# 15. MODEL ARCHITECTURE
+
+Create appropriate Eloquent models.
+
+Examples:
+
+```text
+User
+Role
+Permission
+Department
+UserProfile
+AuditLog
+Notification
+Setting
+Document
+DocumentCategory
+ApprovalWorkflow
+ApprovalStep
+ActivityLog
+```
+
+Define:
+
+- relationships
+- casts
+- scopes
+- accessors where justified
+- authorization relationships
+- soft deletion where appropriate
+
+Keep models clean.
+
+Business logic should not become a giant Model class.
+
+---
+
+# 16. SERVICE LAYER
+
+Create service classes where business operations become complex.
+
+Examples:
+
+```text
+UserService
+RolePermissionService
+AuditLogService
+DocumentService
+NotificationService
+ApprovalWorkflowService
+SettingsService
+```
+
+Use services to avoid putting complex logic into controllers.
+
+Controllers should remain relatively thin.
+
+---
+
+# 17. FORM REQUEST VALIDATION
+
+Every important form must use Laravel Form Requests.
+
+Examples:
+
+```text
+StoreUserRequest
+UpdateUserRequest
+StoreRoleRequest
+UpdateRoleRequest
+StoreDepartmentRequest
+UploadDocumentRequest
+UpdateSettingsRequest
+```
+
+Validation must include:
+
+- required fields
+- correct formats
+- maximum lengths
+- unique values
+- file validation
+- authorization
+
+Never trust browser-side validation alone.
+
+---
+
+# 18. DOCUMENT MANAGEMENT FOUNDATION
+
+Create a secure document architecture.
+
+Categories:
+
+- Governance
+- Policies
+- Finance
+- Programs
+- Projects
+- M&E
+- HR
+- Contracts
+- Reports
+- Donor Documents
+- Communications
+- Legal
+- Technical
+- Training
+
+Document metadata:
+
+```text
+Title
+Category
+Description
+Version
+Owner
+Department
+Access Level
+Status
+Uploaded By
+Uploaded At
+Review Date
+Expiry Date
+```
+
+Sensitive documents must not be publicly accessible.
+
+Use controlled Laravel download routes.
+
+Do not expose private storage directories directly.
+
+---
+
+# 19. APPROVAL WORKFLOW FOUNDATION
+
+Create a reusable approval engine.
+
+Example:
+
+```text
+Draft
+ ↓
+Submitted
+ ↓
+Under Review
+ ↓
+Approved
+ ↓
+Published / Implemented
+```
+
+Possible rejection:
+
+```text
+Under Review
+ ↓
+Returned for Revision
+ ↓
+Draft
+```
+
+The same engine should later support:
+
+- projects
+- budgets
+- reports
+- procurement
+- documents
+- grants
+- donations
+- financial transactions
+
+Do not build separate approval logic for every module.
+
+---
+
+# 20. NOTIFICATION FOUNDATION
+
+Create a reusable notification architecture.
+
+Support:
+
+- database notifications
+- email notifications
+- in-app notification center
+
+Examples:
+
+```text
+New approval request
+Document expiring
+Project requires review
+Report submitted
+User account activated
+Password reset
+System alert
+```
+
+Design the system so SMS/WhatsApp integrations can be added later.
+
+---
+
+# 21. LANGUAGE SYSTEM
+
+Implement:
+
+### English
+
+Default:
+
+```text
+en
+```
+
+### Arabic
+
+```text
+ar
+```
+
+The interface must support:
+
+```text
+English → LTR
+Arabic → RTL
+```
+
+Language selection must be available to users.
+
+Do not hard-code interface text throughout Blade files.
+
+Use translation files.
+
+Example:
+
+```text
+__('dashboard.title')
+__('users.create')
+__('common.save')
+```
+
+---
+
+# 22. RTL DESIGN
+
+When Arabic is selected:
+
+- Sidebar switches correctly
+- Navigation direction changes
+- Tables remain readable
+- Forms align correctly
+- Icons remain correctly positioned
+- Breadcrumbs reverse appropriately
+- Modals and drawers support RTL
+- Charts remain usable
+- Numbers and dates remain readable
+
+Do not simply apply:
+
+```css
+direction: rtl;
+```
+
+and consider the job complete.
+
+The entire interface must be designed for RTL.
+
+---
+
+# 23. ADMIN DASHBOARD FOUNDATION
+
+Create the main authenticated application shell.
+
+### Layout
+
+```text
+┌──────────────────────────────────────────┐
+│ SSH Logo | Search | Notifications | User│
+├───────────────┬──────────────────────────┤
+│               │                          │
+│ Sidebar       │ Main Content             │
+│               │                          │
+│ Dashboard     │                          │
+│ Programs      │                          │
+│ Projects      │                          │
+│ Community     │                          │
+│ Donors        │                          │
+│ M&E           │                          │
+│ Finance       │                          │
+│ Documents     │                          │
+│ Reports       │                          │
+│ CMS           │                          │
+│ Settings      │                          │
+│               │                          │
+└───────────────┴──────────────────────────┘
+```
+
+The sidebar must dynamically show modules according to permissions.
+
+---
+
+# 24. DASHBOARD HOME
+
+Create a professional NGO management dashboard.
+
+Cards may include:
+
+```text
+Active Programs
+Active Projects
+Communities Reached
+Beneficiaries
+Current Donors
+Active Grants
+Pending Approvals
+Reports Due
+```
+
+Charts:
+
+- Program distribution
+- Beneficiary reach
+- Project status
+- Geographic coverage
+- Funding overview
+- Monthly activities
+
+Do not fabricate real statistics.
+
+Use seeded demo data clearly labeled as demonstration data.
+
+---
+
+# 25. PUBLIC WEBSITE FOUNDATION
+
+Create the public website layout independently from the admin dashboard.
+
+Public header:
+
+- SSH logo
+- About
+- Programs
+- Projects
+- Impact
+- SSH-LAB
+- Stories
+- Resources
+- Get Involved
+- Donate
+- Contact
+- Language switcher
+
+Footer:
+
+- SSH identity
+- Contact information
+- Programs
+- Resources
+- Social links
+- Privacy
+- Safeguarding
+- Terms
+- Accountability
+
+---
+
+# 26. SSH BRAND DESIGN
+
+Use a professional institutional visual identity.
+
+Primary visual direction:
+
+- Deep Blue
+- Green
+- Golden Yellow
+- White
+- Controlled red accents
+
+The visual language should communicate:
+
+- sustainability
+- humanitarian professionalism
+- trust
+- youth leadership
+- resilience
+- innovation
+- Africa/Sudan identity
+
+Avoid:
+
+- excessive gradients
+- excessive animations
+- childish illustrations
+- excessive rounded cards
+- generic startup appearance
+- flashy effects
+- excessive shadows
+
+The final appearance should feel closer to a **professional UN/INGO platform** than a commercial startup.
+
+---
+
+# 27. SECURITY BASELINE
+
+Implement:
+
+### Application
+
+- CSRF protection
+- XSS protection
+- SQL injection protection
+- mass assignment protection
+- authorization policies
+- secure password hashing
+- secure sessions
+- rate limiting
+- validation
+- secure file uploads
+
+### Production
+
+```text
+APP_DEBUG=false
+```
+
+Do not expose:
+
+- `.env`
+- database credentials
+- private documents
+- application source code
+- storage internals
+
+Configure secure HTTP headers where practical.
+
+---
+
+# 28. FILE UPLOAD SECURITY
+
+Validate:
+
+- extension
+- MIME type
+- size
+- filename
+- storage path
+
+Do not trust uploaded filenames.
+
+Generate secure filenames.
+
+Reject dangerous executable files.
+
+Private documents should be stored outside the public web root where Hostinger configuration permits.
+
+---
+
+# 29. ERROR HANDLING
+
+Create professional error pages:
+
+```text
+403 Unauthorized
+404 Not Found
+419 Session Expired
+422 Validation Error
+429 Too Many Requests
+500 Server Error
+503 Service Unavailable
+```
+
+Do not expose stack traces to public users.
+
+Log technical details securely.
+
+Show users a professional error message.
+
+---
+
+# 30. LOGGING
+
+Create structured application logging.
+
+Log:
+
+- authentication events
+- errors
+- failed jobs
+- security events
+- important system operations
+
+Use appropriate log channels.
+
+Avoid logging passwords, tokens, or sensitive beneficiary information.
+
+---
+
+# 31. HOSTINGER DEPLOYMENT
+
+The system must be deployable on Hostinger.
+
+Recommended structure:
+
+```text
+/home/account/
+    ssh-laravel/
+        app/
+        bootstrap/
+        config/
+        database/
+        resources/
+        routes/
+        storage/
+        vendor/
+
+    public_html/
+        index.php
+        build/
+        assets/
+```
+
+Configure `public_html` to expose Laravel's public entry point.
+
+Do not place:
+
+```text
+.env
+app/
+config/
+database/
+storage/
+vendor/
+```
+
+directly into publicly accessible locations unnecessarily.
+
+---
+
+# 32. HOSTINGER CRON
+
+Use Laravel scheduler.
+
+Configure Hostinger cron to execute:
+
+```bash
+php artisan schedule:run
+```
+
+Use scheduling later for:
+
+- reminders
+- report deadlines
+- document expiry
+- notifications
+- backups
+- recurring maintenance
+
+Do not assume Supervisor is available.
+
+---
+
+# 33. DATABASE BACKUPS
+
+Design a backup strategy compatible with Hostinger.
+
+Include:
+
+- database backups
+- document backups
+- configuration backups
+- backup retention
+- restoration procedure
+
+Never treat backups as complete until restoration has been tested.
+
+---
+
+# 34. TESTING
+
+Create tests for:
+
+### Authentication
+
+- login
+- logout
+- password reset
+- inactive account
+
+### Authorization
+
+- role access
+- permission access
+- unauthorized route access
+
+### Users
+
+- create
+- update
+- deactivate
+
+### Audit
+
+- important actions generate audit logs
+
+### Documents
+
+- authorized download
+- unauthorized download blocked
+
+### Language
+
+- English
+- Arabic
+- RTL
+
+Use Laravel Feature and Unit tests.
+
+---
+
+# 35. SEEDERS
+
+Create realistic seed data.
+
+Seed:
+
+### Roles
+
+All SSH roles.
+
+### Permissions
+
+All foundation permissions.
+
+### Departments
+
+Initial SSH departments.
+
+### Administrator
+
+Create a safe initial administrator setup.
+
+Do NOT hard-code a real production password in source code.
+
+Use environment variables or a secure setup process.
+
+---
+
+# 36. DEVELOPMENT ADMIN ACCOUNT
+
+Provide an installation process such as:
+
+```bash
+php artisan ssh:install
+```
+
+or another appropriate secure command.
+
+It should allow the administrator to create:
+
+- initial organization settings
+- first administrator
+- roles
+- permissions
+- departments
+
+Never automatically create a known public password.
+
+---
+
+# 37. CODE QUALITY
+
+Follow:
+
+- PSR standards
+- Laravel conventions
+- meaningful naming
+- reusable components
+- clean controllers
+- clean services
+- documented complex logic
+
+Avoid:
+
+- duplicated code
+- giant controllers
+- giant Blade files
+- raw SQL where Eloquent is sufficient
+- unnecessary packages
+- unnecessary dependencies
+
+---
+
+# 38. DO NOT OVERENGINEER
+
+The system must be professional but practical.
+
+Do not create enterprise infrastructure that Hostinger shared hosting cannot reasonably support.
+
+Build a strong modular monolith first.
+
+Design for future migration to:
+
+- VPS
+- dedicated server
+- cloud infrastructure
+
+without rewriting the application.
+
+---
+
+# 39. REQUIRED UI COMPONENT LIBRARY
+
+Create reusable Blade components for:
+
+```text
+Button
+Input
+Select
+Textarea
+Checkbox
+Radio
+Modal
+Drawer
+Dropdown
+Badge
+Alert
+Toast
+Card
+Table
+Pagination
+Breadcrumb
+Tabs
+EmptyState
+LoadingState
+ErrorState
+ConfirmDialog
+FileUploader
+DatePicker
+StatusIndicator
+```
+
+Create consistent states:
+
+- default
+- hover
+- focus
+- disabled
+- loading
+- success
+- warning
+- error
+
+---
+
+# 40. RESPONSIVE DESIGN
+
+The system must work on:
+
+### Desktop
+
+1440px+
+
+### Laptop
+
+1024–1439px
+
+### Tablet
+
+768–1023px
+
+### Mobile
+
+320–767px
+
+The dashboard must not simply shrink the desktop interface.
+
+Design mobile navigation intentionally.
+
+---
+
+# 41. ACCESSIBILITY
+
+Follow professional accessibility principles.
+
+Include:
+
+- keyboard navigation
+- visible focus states
+- semantic HTML
+- sufficient contrast
+- descriptive labels
+- accessible forms
+- meaningful error messages
+- alt text
+- screen-reader-friendly navigation
+
+Target WCAG 2.1/2.2 AA principles where practical.
+
+---
+
+# 42. DATA PRIVACY
+
+SSH works with vulnerable communities.
+
+Therefore design the system around:
+
+**Data Minimization + Need-to-Know Access + Purpose Limitation.**
+
+Do not expose sensitive beneficiary information in:
+
+- public dashboards
+- public URLs
+- reports
+- exports
+- charts
+- search engines
+
+unless explicitly authorized.
+
+---
+
+# 43. DO NOT EXPOSE BENEFICIARY DATA PUBLICLY
+
+Public impact information should use aggregated information.
+
+Example:
+
+Instead of:
+
+```text
+Name: Ahmed...
+Phone: ...
+Location: ...
+```
+
+Public interface should show:
+
+```text
+3,250 people reached
+1,420 women and girls
+780 youth
+12 communities
+```
+
+Use anonymization and aggregation.
+
+---
+
+# 44. DEVELOPMENT OUTPUT
+
+When implementing this phase, produce:
+
+### A. Project structure
+
+Complete Laravel folder structure.
+
+### B. Database
+
+Complete migrations.
+
+### C. Models
+
+Complete foundation models.
+
+### D. Authentication
+
+Working authentication.
+
+### E. RBAC
+
+Working roles and permissions.
+
+### F. Middleware
+
+Authorization middleware.
+
+### G. Policies
+
+Core policies.
+
+### H. Services
+
+Foundation service classes.
+
+### I. Audit
+
+Working audit logging.
+
+### J. Documents
+
+Secure document foundation.
+
+### K. Notifications
+
+Notification foundation.
+
+### L. Localization
+
+English + Arabic.
+
+### M. UI
+
+Admin dashboard shell.
+
+### N. Public website
+
+Public shell.
+
+### O. Seeders
+
+Roles, permissions, departments and safe development data.
+
+### P. Tests
+
+Core automated tests.
+
+### Q. Deployment
+
+Hostinger deployment instructions.
+
+---
+
+# 45. IMPORTANT IMPLEMENTATION RULE
+
+Do not attempt to build the complete SSH platform in one giant code dump.
+
+Implement the foundation in logical stages.
+
+Recommended order:
+
+```text
+Stage 1
+Laravel installation
+
+↓
+
+Stage 2
+Database configuration
+
+↓
+
+Stage 3
+Authentication
+
+↓
+
+Stage 4
+Roles & Permissions
+
+↓
+
+Stage 5
+User Management
+
+↓
+
+Stage 6
+Audit Logging
+
+↓
+
+Stage 7
+Document Foundation
+
+↓
+
+Stage 8
+Approval Foundation
+
+↓
+
+Stage 9
+Notifications
+
+↓
+
+Stage 10
+English/Arabic
+
+↓
+
+Stage 11
+Dashboard Shell
+
+↓
+
+Stage 12
+Public Website Shell
+
+↓
+
+Stage 13
+Testing
+
+↓
+
+Stage 14
+Hostinger Deployment
+```
+
+After every stage:
+
+1. Explain what was created.
+2. Show relevant files.
+3. Provide complete code where required.
+4. Explain where each file belongs.
+5. Provide database commands.
+6. Provide migration commands.
+7. Provide testing instructions.
+8. Identify dependencies on previous stages.
+9. Do not silently skip errors.
+
+---
+
+# 46. CRITICAL RULE FOR FUTURE MODULES
+
+All future modules must use this foundation.
+
+Future modules include:
+
+```text
+Programs
+Projects
+Community & CEM
+Beneficiary Management
+Donor CRM
+Partner Management
+Volunteer Management
+M&E
+Finance
+Procurement
+HR
+Documents
+CMS
+Reports
+GIS
+Communications
+Grants
+Safeguarding
+Feedback & Complaints
+```
+
+Do not create separate authentication systems for individual modules.
+
+Do not duplicate users.
+
+Do not duplicate roles.
+
+Do not duplicate audit systems.
+
+Do not duplicate notification systems.
+
+Everything must connect to the central SSH platform.
+
+---
+
+# 47. DEVELOPMENT STANDARD
+
+Think like you are building a system that may eventually manage:
+
+- millions of records
+- multiple countries
+- multiple projects
+- thousands of community members
+- hundreds of staff and volunteers
+- multiple donors
+- multiple funding streams
+- sensitive humanitarian information
+
+At the same time, the first deployment may run on ordinary Hostinger hosting.
+
+Therefore prioritize:
+
+**Security + Simplicity + Modularity + Performance + Maintainability + Future Scalability.**
+
+---
+
+# 48. FINAL QUALITY TEST
+
+Before declaring Phase 4 complete, verify:
+
+- [ ] Laravel application works
+- [ ] Database works
+- [ ] Authentication works
+- [ ] Password reset works
+- [ ] Roles work
+- [ ] Permissions work
+- [ ] Unauthorized access is blocked
+- [ ] User management works
+- [ ] Audit logs work
+- [ ] Document access is protected
+- [ ] Notifications foundation works
+- [ ] English works
+- [ ] Arabic works
+- [ ] RTL works
+- [ ] Dashboard shell works
+- [ ] Public website shell works
+- [ ] Responsive layouts work
+- [ ] Validation works
+- [ ] Error handling works
+- [ ] Security baseline is implemented
+- [ ] Tests pass
+- [ ] Production debug mode is disabled
+- [ ] Hostinger deployment is documented
+
+---
+
+# FINAL INSTRUCTION
+
+Build **Phase 4 only**.
+
+Do not jump ahead and build the complete Programs, CEM, Finance, M&E, Donor CRM, HR, Procurement, or other modules yet.
+
+The goal of this phase is to establish a **secure, professional, modular Laravel foundation** for the entire Sudan Sustainability Hub digital ecosystem.
+
+The final system must look and behave like a serious humanitarian NGO information-management platform, while remaining practical for deployment on Hostinger shared hosting.
+
+When complete, clearly state:
+
+**“PHASE 4 — LARAVEL FOUNDATION COMPLETE.”**
+
+Then provide the recommended **PHASE 5** implementation sequence.

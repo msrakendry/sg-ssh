@@ -1,0 +1,2 @@
+# Single Page Application redirect rule for static web hosts
+/* /index.html 200

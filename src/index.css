@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-ssh-blue: var(--ssh-blue);
+  --color-ssh-blue-light: var(--ssh-blue-light);
+  --color-ssh-gold: var(--ssh-gold);
+  --color-ssh-gold-light: var(--ssh-gold-light);
+  --color-ssh-green: var(--ssh-green);
+  --color-ssh-green-light: var(--ssh-green-light);
+  --color-ssh-red: var(--ssh-red);
+  --color-ssh-red-light: var(--ssh-red-light);
+  --color-ssh-center-gold: var(--ssh-center-gold);
+  --color-ssh-canvas: var(--ssh-canvas);
+  --color-ssh-card: var(--ssh-card);
+  --color-ssh-surface: var(--ssh-surface);
+  --color-ssh-border: var(--ssh-border);
+}
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-arabic: 'Cairo', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* SSH Official Logo Palette (Default Values) */
+    --ssh-blue: #1e40af;       /* Royal Cobalt Blue (Top-Left Petal) */
+    --ssh-blue-light: #3b82f6;
+    --ssh-gold: #d97706;       /* Warm Sun Gold (Top-Right Petal) */
+    --ssh-gold-light: #f59e0b;
+    --ssh-green: #15803d;      /* Sustainable Emerald Green (Bottom-Left Petal) */
+    --ssh-green-light: #22c55e;
+    --ssh-red: #b91c1c;        /* Resilience Crimson Red (Bottom-Right Petal) */
+    --ssh-red-light: #ef4444;
+    --ssh-center-gold: #eab308;/* Metallic Center Gold "SSH" */
+
+    /* Dark Architectural Canvas */
+    --ssh-canvas: #070b14;
+    --ssh-card: #0f172a;
+    --ssh-surface: #1e293b;
+    --ssh-border: #334155;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: var(--ssh-canvas);
+    color: #f8fafc;
+  }
+
+  html[dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+}
+
+/* Custom scrollbars and Leaflet container fixes */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  border-radius: 0.75rem;
+}
+
+/* Tabular figures for data tables and financial reporting */
+.tabular-numbers {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 4-Color Logo Gradient Accents */
+.ssh-logo-gradient {
+  background: linear-gradient(135deg, var(--ssh-blue) 0%, var(--ssh-gold) 35%, var(--ssh-green) 70%, var(--ssh-red) 100%);
+}
+
+.ssh-logo-border {
+  border-image: linear-gradient(to right, var(--ssh-blue), var(--ssh-gold), var(--ssh-green), var(--ssh-red)) 1;
+}
+
+.ssh-gold-shine {
+  background: linear-gradient(135deg, #fef08a 0%, var(--ssh-center-gold) 50%, var(--ssh-gold) 100%);
+}

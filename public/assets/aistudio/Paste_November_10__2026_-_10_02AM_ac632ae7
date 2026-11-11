@@ -1,0 +1,1824 @@
+# MASTER PROMPT — SSH PROFESSIONAL NGO WEBSITE, MANAGEMENT DASHBOARD & CEM PLATFORM
+
+## ROLE
+
+You are a **Senior NGO Digital Transformation Architect, UX/UI Designer, Laravel/PHP Full-Stack Engineer, Database Architect, Cybersecurity Engineer, and Humanitarian Information Management Specialist**.
+
+Design and develop a **professional, production-ready digital platform** for:
+
+# SUDAN SUSTAINABILITY HUB (SSH)
+
+The platform must look and operate like a **real international humanitarian and sustainable-development NGO**, not like a generic startup website, student project, template, or simple CRUD application.
+
+The system must combine:
+
+1. A professional public NGO website
+2. A secure internal NGO management dashboard
+3. A CMS for managing website content
+4. A CEM — **Community & Engagement Management** system
+5. Donor and partner management
+6. Project and program management
+7. Beneficiary/community management
+8. Volunteer and member management
+9. Fundraising and donation management
+10. Monitoring, reporting and analytics
+11. Document management
+12. Communication and engagement tools
+13. Governance and institutional management
+14. Role-based access control
+15. Audit and accountability systems
+
+The final product should be designed as a **long-term digital platform for SSH**, capable of growing from a small refugee-led organization into an internationally recognized humanitarian and sustainable-development institution.
+
+---
+
+# 1. ORGANIZATION PROFILE
+
+Use the following official organizational narrative as the foundation of the platform.
+
+## WHO WE ARE
+
+The Sudan Sustainability Hub (SSH) is a refugee-led humanitarian and sustainable development organization established by young Sudanese women and men who have directly experienced the realities of war, forced displacement, disrupted education, water scarcity, economic collapse, and protection insecurity caused by the ongoing conflict in Sudan.
+
+Founded within Kiryandongo Refugee Settlement in Uganda, SSH emerged not from theory, but from lived experience. The organization was created by a generation of displaced Sudanese youth who recognized that humanitarian assistance alone is not enough to secure long-term dignity, stability, and recovery for refugee and conflict-affected communities.
+
+SSH was therefore established to bridge emergency response with sustainable development, resilience-building, and future reconstruction efforts for Sudanese communities both in displacement and eventually in post-conflict recovery contexts.
+
+SSH is proudly women-led, with approximately 70% female participation across leadership and program structures. The organization is headed by a young Sudanese woman serving as Executive Director, reflecting SSH’s institutional commitment to inclusive leadership, gender equity, and meaningful participation of women and girls in humanitarian and development solutions.
+
+At its core, SSH represents a new generation of localized humanitarian leadership combining:
+
+- Community trust
+- Youth innovation
+- Gender inclusion
+- Sustainability
+- Humanitarian response
+- Development
+- Resilience
+- Future recovery
+
+SSH operates through four interconnected core pillars:
+
+### 01 — WASH
+Water, Sanitation and Hygiene
+
+### 02 — LIVELIHOODS
+Livelihoods & Economic Empowerment
+
+### 03 — ENERGY & CLIMATE
+Renewable Energy & Climate Resilience
+
+### 04 — EDUCATION
+Education & Youth Development
+
+SSH recognizes that human dignity is multidimensional and sustainable recovery cannot be achieved through isolated interventions.
+
+Access to clean water must be accompanied by education opportunities, reliable energy systems, livelihood pathways, and protection-focused community support structures.
+
+SSH therefore applies an integrated humanitarian-development approach designed to:
+
+- Strengthen resilience
+- Reduce dependency
+- Increase self-reliance
+- Improve community dignity
+- Expand economic opportunity
+- Support youth leadership
+- Promote peace
+- Strengthen climate resilience
+- Prepare communities for long-term recovery
+
+SSH is also developing systems and programs for:
+
+- Youth peacebuilding
+- Anti-conflict engagement
+- Women-led economic empowerment
+- Climate adaptation
+- Green innovation
+- Digital skills
+- Technology access
+- Refugee entrepreneurship
+- Future Sudan reconstruction preparedness
+
+Through **SSH-LAB**, the organization seeks to equip displaced youth with tools, knowledge and leadership capacity required to become agents of peace, sustainability and economic transformation.
+
+SSH envisions a future where displaced populations are not viewed solely as beneficiaries of aid, but as:
+
+**Leaders • Innovators • Entrepreneurs • Problem Solvers • Community Partners**
+
+SSH therefore positions itself as both a humanitarian actor and a long-term development institution committed to advancing:
+
+**Sustainable Peace • Human Dignity • Resilience • Opportunity**
+
+for Sudanese refugees and conflict-affected communities across the region.
+
+---
+
+# 2. PLATFORM OBJECTIVE
+
+Create a complete digital ecosystem called:
+
+# SSH DIGITAL PLATFORM
+
+with three major layers:
+
+### PUBLIC LAYER
+SSH official website
+
+### MANAGEMENT LAYER
+SSH secure organizational dashboard
+
+### ENGAGEMENT LAYER
+SSH Community & Engagement Management — CEM
+
+Architecture:
+
+```text
+                    SSH DIGITAL PLATFORM
+                            │
+             ┌──────────────┴──────────────┐
+             │                             │
+       PUBLIC WEBSITE                SECURE PLATFORM
+             │                             │
+       Website CMS                    ADMIN DASHBOARD
+             │                             │
+             └──────────────┬──────────────┘
+                            │
+                         SSH CEM
+                            │
+        ┌───────────────────┼────────────────────┐
+        │                   │                    │
+   Communities          Beneficiaries         Donors
+        │                   │                    │
+   Volunteers             Projects           Partners
+        │                   │                    │
+   Engagement             Programs           Members
+        │                   │                    │
+        └───────────────────┼────────────────────┘
+                            │
+                     DATA & ANALYTICS
+                            │
+                 Reports • KPIs • M&E
+```
+
+---
+
+# 3. TECHNOLOGY STACK
+
+Build the platform using modern, maintainable technologies.
+
+## Backend
+
+- PHP 8.3+
+- Laravel 12+
+- Laravel Eloquent ORM
+- Laravel Queues
+- Laravel Notifications
+- Laravel Policies/Gates
+- Laravel Events
+- Laravel Jobs
+- Laravel Scheduler
+- Laravel API architecture
+- RESTful APIs
+
+## Database
+
+Use:
+
+- MySQL 8+
+
+Design a normalized relational database with:
+
+- Primary keys
+- Foreign keys
+- Indexes
+- Unique constraints
+- Soft deletes where appropriate
+- Timestamps
+- Audit fields
+- Referential integrity
+
+## Frontend
+
+Use:
+
+- HTML5
+- CSS3
+- JavaScript ES6+
+- Tailwind CSS
+- Alpine.js where useful
+- Chart.js / equivalent visualization library
+- Responsive component architecture
+
+Laravel Blade may be used for the main interface.
+
+Do not make the system unnecessarily dependent on React unless there is a clear architectural reason.
+
+## Development
+
+Use:
+
+- Composer
+- NPM
+- Vite
+- Git
+- Laravel environment configuration
+- `.env`
+- Laravel migrations
+- Seeders
+- Factories
+- Form Requests
+- Resources
+- Policies
+- Services
+- Repositories where appropriate
+
+---
+
+# 4. PROFESSIONAL DESIGN DIRECTION
+
+The platform must visually communicate:
+
+**Trust + Humanitarian professionalism + Sustainability + Innovation + African leadership**
+
+Do NOT create:
+
+- A generic corporate website
+- A colorful startup dashboard
+- A gaming-style interface
+- Excessive gradients
+- Excessive animations
+- Unprofessional stock imagery
+- Fake statistics
+- Fake donor logos
+- Fake UN partnerships
+- Fake project achievements
+
+The design should resemble the quality and usability expected from modern international NGO digital systems.
+
+Use:
+
+- Deep blue
+- Sustainable green
+- Golden yellow
+- White
+- Carefully controlled red accents
+- Neutral gray tones
+
+Design language:
+
+- Modern
+- Institutional
+- Human-centered
+- Accessible
+- Clean
+- Professional
+- Data-driven
+- African context
+- Humanitarian context
+- Sustainability-focused
+
+---
+
+# 5. PUBLIC WEBSITE
+
+Create a complete professional SSH website.
+
+## Main Navigation
+
+### HOME
+
+### ABOUT SSH
+- Who We Are
+- Vision & Mission
+- Our Values
+- Our Approach
+- Leadership
+- Governance
+- Organizational Structure
+- Where We Work
+
+### PROGRAMS
+- WASH
+- Livelihoods
+- Renewable Energy & Climate Resilience
+- Education & Youth Development
+- Peacebuilding
+- Innovation & Technology
+
+### SSH-LAB
+
+### OUR IMPACT
+
+### PROJECTS
+
+### STORIES
+
+### RESOURCES
+
+### GET INVOLVED
+- Volunteer
+- Partner With Us
+- Donate
+- Support SSH
+- Careers
+
+### CONTACT
+
+Include a prominent:
+
+**DONATE NOW**
+
+button.
+
+---
+
+# 6. HOMEPAGE
+
+Design a high-quality NGO homepage.
+
+Hero section:
+
+## BUILDING A SUSTAINABLE FUTURE
+
+**Water • Livelihoods • Energy • Education**
+
+Supporting displaced and conflict-affected communities through locally led humanitarian action, resilience, innovation and sustainable development.
+
+Buttons:
+
+**Explore Our Work**
+
+**Support SSH**
+
+**Partner With Us**
+
+Hero imagery should represent:
+
+- Sudanese communities
+- Refugee youth
+- Women leadership
+- Water
+- Education
+- Livelihoods
+- Renewable energy
+- Community resilience
+
+Avoid stereotypical poverty imagery.
+
+---
+
+# 7. IMPACT SECTION
+
+Create dynamic impact cards.
+
+Examples:
+
+- Communities Reached
+- People Supported
+- Women & Girls Engaged
+- Youth Engaged
+- Projects Implemented
+- Water Systems Supported
+- Livelihood Opportunities
+- Training Participants
+
+IMPORTANT:
+
+Never invent statistics.
+
+Allow authorized administrators to enter verified statistics through the dashboard.
+
+---
+
+# 8. PROGRAM PAGES
+
+Each program must have a professional page structure:
+
+```text
+Program Overview
+Problem
+SSH Approach
+Objectives
+Target Communities
+Activities
+Projects
+Expected Results
+Impact Indicators
+Stories
+Reports
+Gallery
+Related Resources
+Get Involved
+```
+
+---
+
+# 9. PROJECT MANAGEMENT
+
+Create a project management module.
+
+Each project should contain:
+
+- Project ID
+- Project title
+- Program
+- Country
+- Location
+- Donor
+- Partner
+- Start date
+- End date
+- Budget
+- Currency
+- Project status
+- Target beneficiaries
+- Actual beneficiaries
+- Project manager
+- Objectives
+- Activities
+- Outputs
+- Outcomes
+- Indicators
+- Risks
+- Documents
+- Photos
+- Reports
+
+Project status:
+
+- Concept
+- Proposal Development
+- Submitted
+- Approved
+- Active
+- Completed
+- Suspended
+- Closed
+
+---
+
+# 10. CEM — COMMUNITY & ENGAGEMENT MANAGEMENT
+
+Build a dedicated SSH CEM platform.
+
+The CEM must allow SSH to manage relationships with communities and stakeholders.
+
+## CEM ENTITY TYPES
+
+- Community
+- Individual
+- Household
+- Beneficiary
+- Volunteer
+- Youth participant
+- Women participant
+- Community leader
+- Partner
+- Donor
+- Institutional stakeholder
+- Member
+- Staff
+- Trainer
+- Mentor
+
+---
+
+# 11. COMMUNITY MANAGEMENT
+
+Create a community profile containing:
+
+- Community ID
+- Community name
+- Country
+- District
+- Settlement
+- Village/zone
+- Population estimate
+- Priority needs
+- Vulnerability categories
+- Main livelihoods
+- Water access
+- Education access
+- Energy access
+- Community leadership
+- Projects
+- Activities
+- Engagement history
+- Feedback
+- Complaints
+- Documents
+- Geographic coordinates where appropriate
+
+Provide map visualization.
+
+Use **Leaflet.js** for maps.
+
+---
+
+# 12. BENEFICIARY MANAGEMENT
+
+Create a secure beneficiary information system.
+
+Fields should include only information necessary for program delivery and monitoring.
+
+Include:
+
+- Beneficiary ID
+- Registration date
+- Community
+- Program
+- Project
+- Household reference
+- Participation status
+- Services received
+- Training participation
+- Assistance history
+- Referral history
+- Follow-up records
+- Consent status
+
+Use strong privacy controls.
+
+Sensitive information must NOT be exposed to ordinary users.
+
+Implement:
+
+- Role-based access
+- Field-level protection where appropriate
+- Audit logs
+- Consent records
+- Data retention controls
+- Export restrictions
+
+---
+
+# 13. COMMUNITY ENGAGEMENT
+
+Create an engagement module.
+
+Record:
+
+- Meeting
+- Consultation
+- Training
+- Awareness session
+- Community dialogue
+- Focus group discussion
+- Youth activity
+- Women's activity
+- Peacebuilding session
+- Feedback session
+- Community mobilization
+
+Each engagement should include:
+
+- Date
+- Location
+- Facilitator
+- Program
+- Project
+- Participants
+- Topic
+- Objectives
+- Key findings
+- Decisions
+- Follow-up actions
+- Attendance
+- Photos/documents
+- Outcome
+
+---
+
+# 14. FEEDBACK & COMPLAINTS MECHANISM
+
+Create a professional humanitarian feedback system.
+
+Categories:
+
+- Suggestion
+- Complaint
+- Request for assistance
+- Service feedback
+- Safeguarding concern
+- Program feedback
+- Staff conduct
+- Fraud concern
+- Other
+
+Provide:
+
+- Anonymous submission option
+- Confidential case option
+- Case ID
+- Status
+- Priority
+- Assigned officer
+- Response deadline
+- Follow-up
+- Resolution
+- Closure
+- Audit trail
+
+Do not expose confidential complaints on public dashboards.
+
+---
+
+# 15. DONOR MANAGEMENT
+
+Create a donor CRM.
+
+Donor categories:
+
+- Individual
+- Foundation
+- NGO
+- UN agency
+- Government
+- Corporate
+- Community donor
+- Institutional donor
+
+Donor profile:
+
+- Name
+- Organization
+- Type
+- Contact details
+- Country
+- Areas of interest
+- Relationship manager
+- Donation history
+- Grant history
+- Communication history
+- Documents
+- Agreements
+- Reports
+
+---
+
+# 16. PARTNER MANAGEMENT
+
+Create a partner management module.
+
+Track:
+
+- Partner profile
+- Organization type
+- Contact persons
+- Partnership status
+- Areas of collaboration
+- Projects
+- Agreements
+- MoUs
+- Due diligence
+- Communications
+- Performance
+- Documents
+
+---
+
+# 17. DONATION MANAGEMENT
+
+Create a professional donation system.
+
+Donation options:
+
+- One-time donation
+- Recurring donation
+- Project-specific donation
+- General support
+
+Payment architecture should be prepared for integration with legitimate payment providers.
+
+Potential payment methods:
+
+- Card
+- Mobile money
+- Bank transfer
+- PayPal
+- Other approved gateways
+
+Do NOT store raw card information.
+
+Donation record:
+
+- Donor
+- Amount
+- Currency
+- Date
+- Payment method
+- Campaign
+- Project
+- Status
+- Receipt
+- Transaction reference
+
+---
+
+# 18. VOLUNTEER MANAGEMENT
+
+Create:
+
+- Volunteer registration
+- Application review
+- Skills
+- Interests
+- Availability
+- Location
+- Assignments
+- Training
+- Participation
+- Hours
+- Certificates
+- Communication history
+
+---
+
+# 19. MEMBER MANAGEMENT
+
+Create an internal SSH membership system.
+
+Track:
+
+- Member profile
+- Membership category
+- Join date
+- Status
+- Responsibilities
+- Committee
+- Participation
+- Training
+- Documents
+- Conduct records
+- Resignation/termination status
+
+Access must follow SSH governance rules.
+
+---
+
+# 20. SSH ADMIN DASHBOARD
+
+Create a powerful executive dashboard.
+
+Dashboard cards:
+
+- Active Projects
+- Active Programs
+- Communities Reached
+- Beneficiaries
+- Volunteers
+- Donors
+- Partners
+- Funds Raised
+- Project Budget
+- Project Expenditure
+- Open Feedback Cases
+- Pending Reports
+- Upcoming Activities
+
+Charts:
+
+- Projects by program
+- Beneficiaries by program
+- Geographic reach
+- Gender participation
+- Youth participation
+- Project status
+- Funding by source
+- Donations over time
+- Community engagement
+- Program performance
+
+---
+
+# 21. EXECUTIVE DASHBOARD
+
+Create a special Executive Director dashboard.
+
+Show:
+
+### ORGANIZATIONAL PERFORMANCE
+
+- Program performance
+- Financial overview
+- Fundraising
+- Project pipeline
+- Donor pipeline
+- Community reach
+- Gender participation
+- Youth participation
+- Risk alerts
+- Compliance alerts
+- Upcoming deadlines
+
+Use traffic-light indicators:
+
+- Green = on track
+- Amber = attention required
+- Red = critical
+
+---
+
+# 22. PROGRAM MANAGER DASHBOARD
+
+Program managers should see:
+
+- Assigned projects
+- Activities
+- Beneficiaries
+- Indicators
+- Targets
+- Achievements
+- Upcoming deadlines
+- Reports
+- Risks
+- Field activities
+- Community feedback
+
+---
+
+# 23. M&E / IMPACT MANAGEMENT
+
+Build a Monitoring, Evaluation, Accountability and Learning module.
+
+Track:
+
+### Inputs
+### Activities
+### Outputs
+### Outcomes
+### Indicators
+### Targets
+### Actual achievements
+### Means of verification
+### Data sources
+### Reporting periods
+
+Allow:
+
+- Monthly reports
+- Quarterly reports
+- Annual reports
+- Donor reports
+- Project completion reports
+
+---
+
+# 24. DOCUMENT MANAGEMENT
+
+Create a secure document management system.
+
+Categories:
+
+- Policies
+- Governance
+- Finance
+- HR
+- Projects
+- Proposals
+- Donor agreements
+- MoUs
+- Reports
+- Training
+- Procurement
+- Legal
+- Communications
+- Photos
+- Evidence
+
+Features:
+
+- Upload
+- Versioning
+- Access permissions
+- Download controls
+- Document status
+- Approval workflow
+- Expiry dates
+- Audit trail
+
+---
+
+# 25. CMS
+
+Administrators must be able to manage:
+
+- Pages
+- Programs
+- Projects
+- Stories
+- News
+- Events
+- Reports
+- Resources
+- Leadership profiles
+- Impact numbers
+- Gallery
+- FAQs
+- Homepage sections
+
+No developer should need to modify code for ordinary content updates.
+
+---
+
+# 26. USER ROLES
+
+Implement robust RBAC.
+
+Roles may include:
+
+### Super Administrator
+Full technical access.
+
+### Executive Director
+Organization-wide strategic visibility.
+
+### Program Director
+Programs and project oversight.
+
+### Program Manager
+Assigned programs/projects.
+
+### M&E Officer
+Indicators, data and reporting.
+
+### Finance Officer
+Financial information.
+
+### HR/Admin
+Personnel and administrative information.
+
+### CEM Officer
+Community and engagement management.
+
+### Communications Officer
+Website and public communications.
+
+### Project Officer
+Assigned project operations.
+
+### Field Officer
+Field activities and community records.
+
+### Volunteer Coordinator
+Volunteer management.
+
+### Donor/Partnership Officer
+Donors and partners.
+
+### Auditor
+Read-only audit access.
+
+### Viewer
+Limited read-only access.
+
+Use **least-privilege access**.
+
+---
+
+# 27. AUTHENTICATION & SECURITY
+
+Implement:
+
+- Secure login
+- Password hashing
+- Password reset
+- Email verification
+- Session management
+- Role-based authorization
+- CSRF protection
+- XSS protection
+- SQL injection prevention
+- Rate limiting
+- Login attempt monitoring
+- Optional 2FA architecture
+- Secure file uploads
+- Audit logging
+- API authentication
+- Secure environment variables
+
+Never place secrets inside source code.
+
+---
+
+# 28. AUDIT LOG
+
+Every important administrative action should be logged.
+
+Track:
+
+- User
+- Action
+- Module
+- Record
+- Previous value
+- New value
+- IP address where appropriate
+- Timestamp
+
+Examples:
+
+```text
+Created project
+Updated beneficiary
+Approved document
+Changed user role
+Published article
+Changed donation status
+Closed complaint
+Exported data
+Deleted record
+```
+
+Audit logs must be protected from ordinary users.
+
+---
+
+# 29. NOTIFICATION SYSTEM
+
+Build notification architecture for:
+
+- Email
+- Dashboard notifications
+- System alerts
+
+Examples:
+
+- Project deadline approaching
+- Report overdue
+- Complaint requires response
+- Donation received
+- Document expiring
+- New volunteer application
+- New partner inquiry
+- New contact message
+- Approval required
+
+Use Laravel Notifications and queued jobs.
+
+---
+
+# 30. MULTILINGUAL SUPPORT
+
+Prepare the architecture for:
+
+### English
+### Arabic
+
+Use Laravel localization.
+
+The interface must support RTL Arabic correctly.
+
+Language switcher:
+
+**EN | AR**
+
+Do not hard-code interface text.
+
+---
+
+# 31. RESPONSIVE DESIGN
+
+The platform must work professionally on:
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+
+The dashboard must have a responsive sidebar.
+
+Desktop:
+
+```text
+Logo
+Dashboard
+Programs
+Projects
+Communities
+Beneficiaries
+CEM
+Donors
+Partners
+Volunteers
+M&E
+Documents
+Reports
+CMS
+Settings
+```
+
+Mobile:
+
+Use an appropriate mobile navigation system.
+
+---
+
+# 32. DATABASE ARCHITECTURE
+
+Design a professional relational database.
+
+Potential tables include:
+
+```text
+users
+roles
+permissions
+user_roles
+organizations
+communities
+households
+beneficiaries
+beneficiary_services
+programs
+projects
+project_activities
+project_indicators
+indicator_values
+donors
+donations
+partners
+partnerships
+volunteers
+members
+events
+engagements
+attendance
+feedback
+complaints
+communications
+documents
+document_versions
+reports
+stories
+pages
+media
+notifications
+audit_logs
+settings
+```
+
+Do not create unnecessary tables.
+
+Use proper normalization and relationships.
+
+---
+
+# 33. API ARCHITECTURE
+
+Build the application so APIs can later support:
+
+- Mobile application
+- KoboToolbox integration
+- External reporting
+- Payment systems
+- Donor platforms
+- SMS systems
+- GIS
+- Other humanitarian information systems
+
+Use Laravel API Resources and version APIs:
+
+```text
+/api/v1/
+```
+
+---
+
+# 34. GIS / MAP
+
+Use Leaflet.js.
+
+Display:
+
+- SSH operational locations
+- Projects
+- Communities
+- Water projects
+- Education projects
+- Livelihood projects
+- Energy projects
+
+Do not expose sensitive beneficiary locations publicly.
+
+Public maps should use aggregated/generalized locations where necessary.
+
+---
+
+# 35. PUBLIC TRANSPARENCY
+
+Create a transparency section.
+
+Potential sections:
+
+- Annual Reports
+- Financial Reports
+- Project Reports
+- Policies
+- Governance
+- Impact
+- Donor Information
+- Accountability
+- Community Feedback
+
+Only publish documents approved for public disclosure.
+
+---
+
+# 36. CONTACT & INQUIRIES
+
+Create professional contact forms:
+
+### General Inquiry
+### Partnership
+### Donation
+### Volunteer
+### Media
+### Program Inquiry
+
+Store submissions in the dashboard.
+
+Administrators can:
+
+- Assign
+- Respond
+- Categorize
+- Close
+- Track inquiry history
+
+---
+
+# 37. SEO
+
+Implement:
+
+- SEO-friendly URLs
+- Meta titles
+- Meta descriptions
+- Open Graph metadata
+- Sitemap
+- Robots configuration
+- Structured data where appropriate
+- Canonical URLs
+- Accessible headings
+
+Example:
+
+```text
+/about
+/programs/wash
+/programs/livelihoods
+/programs/energy
+/programs/education
+/projects/project-name
+/stories/story-name
+/donate
+/contact
+```
+
+---
+
+# 38. ACCESSIBILITY
+
+Target professional accessibility standards.
+
+Include:
+
+- Keyboard navigation
+- Proper contrast
+- Alt text
+- Accessible forms
+- Semantic HTML
+- Focus states
+- Screen-reader-friendly labels
+- Error messages
+- Accessible tables
+
+---
+
+# 39. DATA PROTECTION
+
+Treat beneficiary/community information as sensitive humanitarian data.
+
+Implement:
+
+- Data minimization
+- Consent
+- Access control
+- Audit trails
+- Retention rules
+- Secure exports
+- Secure backups
+- Controlled deletion
+- Confidentiality controls
+
+Never expose sensitive humanitarian information on public pages.
+
+---
+
+# 40. CODE QUALITY
+
+The generated Laravel application must follow professional engineering practices.
+
+Use:
+
+```text
+app/
+ ├── Models/
+ ├── Http/
+ │   ├── Controllers/
+ │   ├── Requests/
+ │   └── Resources/
+ ├── Services/
+ ├── Policies/
+ ├── Notifications/
+ ├── Jobs/
+ └── Actions/
+```
+
+Use:
+
+- Form Request validation
+- Policies
+- Service classes
+- Reusable components
+- Database migrations
+- Seeders
+- Factories
+- Error handling
+- Logging
+- Transactions for critical operations
+
+Do not put all business logic inside controllers.
+
+---
+
+# 41. DEMO DATA
+
+Create realistic but clearly fictional demo data for development.
+
+Do NOT create fake claims that could be mistaken for real SSH achievements.
+
+Use labels such as:
+
+**DEMO DATA**
+
+for development records.
+
+Examples:
+
+```text
+Demo Project
+Demo Community
+Demo Donor
+Demo Beneficiary
+```
+
+---
+
+# 42. DASHBOARD UI
+
+The dashboard should look like a professional NGO information-management platform.
+
+Layout:
+
+```text
+┌────────────────────────────────────────────────────────────┐
+│ SSH LOGO     Search       Notifications    User Profile   │
+├──────────────┬─────────────────────────────────────────────┤
+│              │                                             │
+│ Dashboard    │              DASHBOARD                      │
+│              │                                             │
+│ Programs     │  KPI     KPI     KPI     KPI                │
+│ Projects     │                                             │
+│ Communities  │  ┌─────────────────────────────────────┐    │
+│ Beneficiaries│  │ Program Performance                  │    │
+│ CEM          │  └─────────────────────────────────────┘    │
+│ Donors       │                                             │
+│ Partners     │  ┌────────────────┐ ┌──────────────────┐   │
+│ Volunteers   │  │ Project Status │ │ Geographic Reach │   │
+│ M&E          │  └────────────────┘ └──────────────────┘   │
+│ Reports      │                                             │
+│ Documents    │  Recent Activities / Alerts / Tasks         │
+│ CMS          │                                             │
+│ Settings     │                                             │
+└──────────────┴─────────────────────────────────────────────┘
+```
+
+---
+
+# 43. SSH BRANDING
+
+Use the official SSH identity consistently.
+
+Organization:
+
+**Sudan Sustainability Hub**
+
+Abbreviation:
+
+**SSH**
+
+Visual identity:
+
+- Deep Blue
+- Green
+- Golden Yellow
+- White
+- Controlled Red Accent
+
+Use the SSH logo where available.
+
+Do not distort the logo.
+
+Create a professional design system:
+
+```text
+Primary
+Secondary
+Accent
+Success
+Warning
+Danger
+Neutral
+Background
+Surface
+Border
+Text
+```
+
+---
+
+# 44. FOOTER
+
+Create a professional NGO footer containing:
+
+### Sudan Sustainability Hub
+
+**Building a sustainable future: Water • Livelihoods • Energy • Education**
+
+Links:
+
+- About
+- Programs
+- Projects
+- Impact
+- Resources
+- Donate
+- Volunteer
+- Partner
+- Contact
+- Privacy
+- Terms
+- Safeguarding
+- Accountability
+
+Include official contact information configured through the CMS rather than hard-coded.
+
+---
+
+# 45. ADMIN CMS SETTINGS
+
+Create settings for:
+
+- Organization name
+- Logo
+- Favicon
+- Email
+- Phone
+- Social media
+- Address
+- Website URL
+- Mission
+- Vision
+- Footer text
+- Donation settings
+- SEO settings
+- Languages
+- System settings
+
+---
+
+# 46. REPORTING
+
+Create report-generation architecture.
+
+Reports:
+
+- Project report
+- Program report
+- Beneficiary report
+- Community report
+- Donor report
+- Financial summary
+- Engagement report
+- M&E report
+- Annual impact report
+
+Allow:
+
+- PDF
+- Excel
+- CSV
+
+Exports must respect user permissions and data-protection restrictions.
+
+---
+
+# 47. APPROVAL WORKFLOWS
+
+Create configurable approval workflows.
+
+Examples:
+
+```text
+Draft
+   ↓
+Submitted
+   ↓
+Under Review
+   ↓
+Approved
+   ↓
+Published
+```
+
+For projects:
+
+```text
+Concept
+   ↓
+Proposal
+   ↓
+Internal Review
+   ↓
+Approval
+   ↓
+Active
+   ↓
+Completed
+   ↓
+Closed
+```
+
+---
+
+# 48. FUTURE INTEGRATION ARCHITECTURE
+
+Design the platform so SSH can later integrate:
+
+- KoboToolbox
+- GIS systems
+- Mobile applications
+- SMS
+- Email services
+- Payment gateways
+- Cloud storage
+- Donor CRM
+- Accounting software
+- Monitoring systems
+- Digital identity systems
+
+Do not build fake integrations.
+
+Create clean integration interfaces and configuration placeholders.
+
+---
+
+# 49. DEVELOPMENT PHASES
+
+Build the system in phases.
+
+## PHASE 1
+Architecture + database + authentication
+
+## PHASE 2
+Public SSH website
+
+## PHASE 3
+CMS
+
+## PHASE 4
+Admin dashboard
+
+## PHASE 5
+CEM
+
+## PHASE 6
+Projects & Programs
+
+## PHASE 7
+Donors & Partners
+
+## PHASE 8
+M&E and reporting
+
+## PHASE 9
+Documents and governance
+
+## PHASE 10
+Security, testing and deployment
+
+---
+
+# 50. REQUIRED OUTPUT FROM GOOGLE AI STUDIO
+
+Do not only provide a visual mockup.
+
+Produce a complete implementation plan and working code architecture.
+
+Start by producing:
+
+### A. SYSTEM ARCHITECTURE
+
+Show the complete platform architecture.
+
+### B. USER JOURNEYS
+
+Document:
+
+- Public visitor
+- Beneficiary/community user
+- Volunteer
+- Field officer
+- Program manager
+- M&E officer
+- Finance officer
+- Communications officer
+- Executive Director
+- Administrator
+
+### C. INFORMATION ARCHITECTURE
+
+Create the full navigation structure.
+
+### D. DATABASE ERD
+
+Show all core entities and relationships.
+
+### E. DATABASE MIGRATIONS
+
+Create Laravel migrations.
+
+### F. MODELS
+
+Create Eloquent models and relationships.
+
+### G. AUTHENTICATION
+
+Implement secure authentication.
+
+### H. RBAC
+
+Implement roles and permissions.
+
+### I. PUBLIC WEBSITE
+
+Build the complete responsive website.
+
+### J. ADMIN DASHBOARD
+
+Build the complete responsive dashboard.
+
+### K. CEM
+
+Build the Community & Engagement Management system.
+
+### L. CMS
+
+Build the content management system.
+
+### M. REPORTING
+
+Build reporting and analytics.
+
+### N. SECURITY
+
+Implement professional security controls.
+
+### O. TESTING
+
+Create:
+
+- Unit tests
+- Feature tests
+- Authentication tests
+- Authorization tests
+- Validation tests
+- Critical workflow tests
+
+---
+
+# 51. CRITICAL DEVELOPMENT RULE
+
+Do NOT generate the entire application as one enormous uncontrolled file.
+
+Use a modular architecture.
+
+Each major module must have its own:
+
+- Models
+- Controllers
+- Requests
+- Policies
+- Services
+- Views/components
+- Routes
+- Tests
+
+Keep the system maintainable.
+
+---
+
+# 52. REAL-LIFE NGO STANDARD
+
+The final system must be designed as if SSH will eventually manage:
+
+- Multiple countries
+- Multiple refugee settlements
+- Multiple programs
+- Multiple donors
+- Multiple projects
+- Thousands of beneficiaries
+- Hundreds of volunteers
+- Multiple partners
+- Multiple currencies
+- Multiple reporting requirements
+
+Therefore design for scalability from the beginning.
+
+---
+
+# 53. IMPORTANT ETHICAL REQUIREMENT
+
+SSH is a humanitarian organization.
+
+Never design the system around exploiting beneficiary data.
+
+Prioritize:
+
+**Dignity • Privacy • Consent • Protection • Accountability • Do No Harm**
+
+Do not expose:
+
+- Sensitive beneficiary information
+- Protection cases
+- Confidential complaints
+- Personal identification information
+- Sensitive geographic information
+- Internal security information
+
+on the public website.
+
+---
+
+# 54. FINAL DESIGN QUALITY
+
+The finished platform should feel comparable to a professionally developed digital platform used by a serious international NGO.
+
+It should communicate:
+
+> **LOCAL LEADERSHIP. GLOBAL VISION. SUSTAINABLE FUTURE.**
+
+The interface must be:
+
+**Professional  
+Modern  
+Human-centered  
+Secure  
+Scalable  
+Accessible  
+Responsive  
+Data-driven  
+Humanitarian  
+African  
+Sustainability-focused**
+
+Do not create a basic NGO template.
+
+Create a **complete SSH digital ecosystem**.
+
+---
+
+# 55. FIRST IMPLEMENTATION STEP
+
+Before generating large amounts of code, provide:
+
+1. Complete system architecture
+2. Site map
+3. Dashboard information architecture
+4. CEM information architecture
+5. Database ERD
+6. Database table specification
+7. User roles and permissions matrix
+8. Main UI design system
+9. Laravel folder architecture
+10. Development roadmap
+
+Then begin implementation **module by module**, starting with:
+
+**Authentication → Core Database → RBAC → Public Website → CMS → Dashboard → CEM**
+
+Every module must be tested before moving to the next module.
+
+The result must be a professional, secure and scalable **SSH NGO Digital Management Platform** built with **PHP Laravel + MySQL + JavaScript**, suitable for real-world humanitarian and sustainable-development operations.
